@@ -1,0 +1,15 @@
+<main *ngIf="blogPost$ | async as blogPost ">
+    <!-- <pre>
+        {{ blogPost.fields.content.content[0].content[0].value | json }}
+    </pre> -->
+    <div class="post-container">
+        <img [src]="blogPost.fields.featuredImage.fields.file.url" alt="">
+        <h2 class="title">{{ blogPost.fields.title }}</h2>
+        <p class="author">{{ blogPost.fields.author }}</p>
+        <p class="content" *ngFor="let list of blogPost.fields.content.content;index as i">
+            <markdown ngPreserveWhitespaces>
+                {{ blogPost.fields.content.content[i].content[0].value }}
+            </markdown>
+        </p>
+    </div>
+</main>
