@@ -8,7 +8,6 @@ import { from } from 'rxjs';
 })
 export class ContentfulService {
 
-  
   constructor() { }
 
   private client = createClient({
